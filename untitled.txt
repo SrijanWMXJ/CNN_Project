@@ -1,0 +1,4 @@
+# 1. Write the final model code
+# 2. Edit the deployment code
+# 3. Deploy the model using Streamlit
+# 4. Create a better model
