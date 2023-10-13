@@ -28,7 +28,7 @@ model_path = 'classifier_model.h5'
 gdown.download(model_url, model_path, quiet=False)
 
 # Load the model
-model = keras.models.load_model(model_path)
+model = load_model(model_path)
 # load classifier
 #model = load_model('./classifier_model.h5')
 
