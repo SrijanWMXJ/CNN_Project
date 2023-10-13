@@ -2,6 +2,10 @@ import streamlit as st
 from keras.models import load_model
 from PIL import Image
 import numpy as np
+import gdown
+import tensorflow as tf
+from tensorflow import keras
+
 
 from util import classify, set_background
 
@@ -16,8 +20,17 @@ st.header('Please upload the chest X-ray image')
 # upload file
 file = st.file_uploader('', type=['jpeg', 'jpg', 'png'])
 
+# Define the shareable link to the model file on Google Drive
+model_url = 'https://drive.google.com/file/d/1-f_df8CiA1jeQygRRUANmJXWBqR6asNn/view?usp=drive_link'
+
+# Download the model file using gdown
+model_path = 'model.h5'
+gdown.download(model_url, model_path, quiet=False)
+
+# Load the model
+model = keras.models.load_model(model_path)
 # load classifier
-model = load_model('./classifier_model.h5')
+#model = load_model('./classifier_model.h5')
 
 # load class names
 with open('./labels.txt', 'r') as f:
