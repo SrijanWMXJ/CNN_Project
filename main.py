@@ -26,7 +26,7 @@ with open('./labels.txt', 'r') as f:
 
 # display image
 if file is not None:
-    image = Image.open(file).convert('RGB')
+    image = Image.open(file).convert('RGB').resize((150,150))
     st.image(image, use_column_width=True)
 
     # classify image
