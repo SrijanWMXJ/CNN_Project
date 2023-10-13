@@ -24,7 +24,7 @@ file = st.file_uploader('', type=['jpeg', 'jpg', 'png'])
 model_url = 'https://drive.google.com/file/d/1-f_df8CiA1jeQygRRUANmJXWBqR6asNn/view?usp=drive_link'
 
 # Download the model file using gdown
-model_path = 'model.h5'
+model_path = 'classifier_model.h5'
 gdown.download(model_url, model_path, quiet=False)
 
 # Load the model
