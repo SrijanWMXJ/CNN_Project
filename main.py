@@ -33,13 +33,8 @@ file = st.file_uploader('', type=['jpeg', 'jpg', 'png'])
 model = load_model('./classifier_lite.h5')
 
 # load class names
-"""
 with open('./labels.txt', 'r') as f:
-    class_names = [a[:-1].split(' ')[1] for a in f.readlines()]
-    f.close()
-"""
-
-with open('./labels.txt', 'r') as f:
+    # class_names = [a[:-1].split(' ')[1] for a in f.readlines()]
     class_names = [line.strip().rsplit(' ', 1)[-1] for line in f.readlines()]
     f.close()
 
