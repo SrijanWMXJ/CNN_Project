@@ -21,16 +21,16 @@ st.header('Please upload the chest X-ray image')
 file = st.file_uploader('', type=['jpeg', 'jpg', 'png'])
 
 # Define the shareable link to the model file on Google Drive
-model_url = 'https://drive.google.com/file/d/1-f_df8CiA1jeQygRRUANmJXWBqR6asNn/view?usp=drive_link'
+# model_url = 'https://drive.google.com/file/d/1-f_df8CiA1jeQygRRUANmJXWBqR6asNn/view?usp=drive_link'
 
 # Download the model file using gdown
-model_path = 'classifier_model.h5'
-gdown.download(model_url, model_path, quiet=False)
+# model_path = 'classifier_model.h5'
+# gdown.download(model_url, model_path, quiet=False)
 
 # Load the model
-model = load_model(model_path)
+# model = load_model(model_path)
 # load classifier
-#model = load_model('./classifier_model.h5')
+model = load_model('./classifier_lite.h5')
 
 # load class names
 with open('./labels.txt', 'r') as f:
